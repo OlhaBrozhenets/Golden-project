@@ -1,0 +1,96 @@
+html, body
+	font-family: "Roboto"
+	font-weight: normal
+	font-size: 14px
+	color: $text 
+
+main 
+	overflow: hidden
+	> * 
+		padding-top: 120px
+		padding-bottom: 120px
+
+.gray-block
+	background-color: $silver 
+
+h1 
+	font-family: "Montserrat" 
+	font-weight: bold
+	text-transform: uppercase
+	font-size: 75px
+	margin-bottom: 60px 
+	
+
+.title
+	font-family: "Montserrat"
+	font-size: 40px
+	text-transform: uppercase
+	text-align: center
+	margin-bottom: 15px
+	color: $headline
+	&-sub
+		font-family: "Myriad"
+		font-size: 16px
+		font-style: normal
+		text-align: center
+		color: $text
+		margin-bottom: 75px
+		&_italics
+			font-family: "Droid"
+%for
+	&-row
+		@include flex($jc: space-between, $w: wrap)
+		margin: -15px
+	&-col
+		padding: 15px
+
+.container
+	width: 100% 
+	max-width: nth($mediaBp, 1)
+	padding-left: 10px
+	padding-right: 10px
+	margin-left: auto
+	margin-right: auto 
+	
+.logo
+	font-family:  "Wisdom"
+	font-size: 26px
+	color: $yellow
+	
+		
+.button
+	@include flex($jc: center, $ai: center)
+	width: 240px
+	height: 65px
+	margin: 0 auto
+	background-color: $yellow
+	color: #FFF
+	font-family: "Montserrat" 
+	font-weight: bold 
+	font-size: 18px
+	text-transform: uppercase
+	border-radius: 3px 
+	transition: .2s
+	&:hover
+		background-color: $yellow * 0.9
+		color: #FFF
+		transform: translateY(-5px)
+		box-shadow: 0 7px 10px 0 rgba(#000, .2)
+		
+.link
+	&_hover
+		&:hover *
+			color: #fff
+			transition: 0.2s 
+		&:hover .fa-twitter
+			background-color: #3ea4f0
+			border-color: #3ea4f0
+		&:hover .fa-facebook-f
+			background-color: #3b5998
+			border-color: #3b5998
+		&:hover .fa-pinterest-p
+			background-color: #cb2028
+			border-color: #cb2028
+		&:hover .fa-google-plus-g
+			background-color: #dc483c
+			border-color: #dc483c

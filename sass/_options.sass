@@ -1,0 +1,110 @@
+// ============================
+// RESETS
+// ============================
+table, thead, tbody, tfoot, tr, th, td 
+	margin: 0
+	padding: 0
+	border: none
+	border-collapse: inherit
+	border-spacing: 0
+	border-color: inherit
+	vertical-align: inherit
+	font-weight: inherit
+	-webkit-border-horizontal-spacing: 0
+	-webkit-border-vertical-spacing: 0 
+
+* 
+	margin: 0
+	padding: 0 
+
+ul, ol 
+	list-style-type: none 
+
+a 
+	text-decoration: none
+	cursor: pointer 
+
+input:focus,
+label:focus,
+textarea:focus,
+select:focus,
+option:focus,
+button:focus,
+a:focus 
+	outline: none 
+
+*, *:before, *:after, input, textarea, button, select 
+	box-sizing: border-box 
+
+// ============================
+// MAIN COLORS
+// ============================
+ 
+$silver: #f7f7f7
+$text: #777
+$yellow: #fed136
+$headline: #222
+$dark: #333
+
+// ============================
+// FONTS
+// ============================
+
+@font-face
+	font-family: "Droid"
+	font-weight: normal
+	font-style: italic
+	src: url(fonts/droid/Droid-Serif.ttf) format("truetype")
+	
+@font-face
+	font-family: "Myriad"
+	font-weight: normal
+	font-style: normal
+	src: url(fonts/myriad/MyriadProRegular.ttf) format("truetype")
+	
+@font-face
+	font-family: "Montserrat"
+	font-weight: bold
+	font-style: normal
+	src: url(fonts/montserrat/Montserrat-Bold.ttf) format("truetype")
+	
+@font-face
+	font-family: "Montserrat"
+	font-weight: normal
+	font-style: normal
+	src: url(fonts/montserrat/Montserrat-Regular.ttf) format("truetype")
+	
+
+@font-face
+	font-family: "Roboto"
+	font-weight: normal
+	font-style: normal
+	src: url(fonts/roboto/Roboto-Regular.ttf) format("truetype")
+	
+@font-face
+	font-family: "Roboto"
+	font-weight: bold
+	font-style: normal
+	src: url(fonts/roboto/Roboto-Bold.ttf) format("truetype")
+	
+@font-face
+	font-family: "Wisdom"
+	font-weight: normal
+	font-style: Script
+	src: url(fonts/wisdom/WisdomScript.ttf) format("truetype")
+
+// ============================
+// MEDIA
+// ============================
+
+$mediaBp: (940px, 767px, 640px, 480px)
+
+// ============================
+// MIXINS
+// ============================
+
+@mixin flex ($d: flex, $jc: flex-start, $w: nowrap, $ai: stretch, $fd: row) 
+	display: $d
+	flex-flow: $fd $w
+	justify-content: $jc
+	align-items: $ai 

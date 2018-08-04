@@ -1,0 +1,368 @@
+@import "_options"
+@import "_common"
+// ====================
+// STYLES
+// ====================
+
+
+// ====================
+// Header styles
+// ====================
+.header
+	background: url(img/headerImage.jpg) no-repeat center /cover
+	&__grid
+		@include flex($jc: space-between, $ai: flex-end)
+		padding-top: 40px
+		padding-bottom: 10px
+		
+.nav
+	&__list
+		@include flex
+	li + li
+		margin-left: 40px
+	a
+		font-family: "Montserrat"
+		font-weight: normal 
+		font-size: 14px
+		text-transform: uppercase
+		color: #FFF 
+		&:hover
+			text-decoration: underline
+
+
+.header
+	&-block
+		padding: 205px 0 160px
+		color: #FFF
+		text-align: center
+	&__title
+		&-sub
+			font-family: "Droid"
+			font-weight: lighter
+			font-size: 40px
+			font-style: italic 
+			text-transform: capitalize
+			margin-bottom: 35px
+		
+			
+// ====================
+// Service-Block styles
+// ==================== 
+
+.service-grid
+	&__row
+		@extend %for-row
+	&__col
+		@extend %for-col
+		@include flex($ai: center, $fd: column)
+		width: calc(100% / 3)
+		max-width: 290px  
+	&__icon
+		@include flex($jc: center, $ai: center) 
+		width: 75px
+		height: 75px
+		border-radius: 50%
+		border: 3px solid
+		color: $yellow
+		font-size: 32px
+		flex-shrink: 0 
+		margin-bottom: 25px
+	&__title
+		font-family: "Montserrat"
+		font-weight: bold 
+		font-size: 18px
+		margin-bottom: 15px
+		color: $headline
+		text-transform: capitalize  	
+	&__text
+		text-align: center
+	
+// ====================
+// Portfolio-Block styles
+// ==================== 
+
+.portfolio-block
+	padding-bottom: 70px
+.portfolio-grid
+	&__row
+		@extend %for-row
+		margin:
+			top: 0
+			bottom: 0
+	&__col
+		@extend %for-col
+		@include flex($ai: center, $fd: column)
+		width: calc(100% / 3)
+		max-width: 320px
+		padding:
+			top: 0
+			bottom: 0
+		margin-bottom: 50px
+	&__link
+		background-color: #FFF
+		&:hover .portfolio-grid__image
+			filter: brightness(60%)
+	&__info
+		text-align: center
+		text-transform: capitalize
+			
+	&__image
+		height: 300px
+		cursor: pointer
+		overflow: hidden
+		transition: 0.6s 
+		img
+			display: block
+			width: 100%
+			height: 100%
+			object-fit: cover
+	&__title
+		margin-top: 20px
+		font-family: "Montserrat"
+		font-size: 18px
+		font-weight: bold
+		color: $dark
+		&-sub
+			font-family: "Droid"
+			font-style: italic
+			font-size: 14px
+			font-weight: lighter
+			color: #737373 
+			margin-bottom: 20px 
+
+// ====================
+// About-Block styles
+// ==================== 
+
+.about
+	&__image
+		position: relative
+		width: 170px
+		height: 170px
+		border-radius: 50%
+		border: 7px solid #f1f1f1
+		flex-shrink: 0  
+		margin: 
+			right: 30px
+			left: 30px
+		&:after
+			content: ""
+			position: absolute 
+			bottom: calc(0% - 100px)
+			left: calc(50% - 1px)
+			height: 100px
+			width: 2px
+			background-color: #f1f1f1  
+		img
+			display: block
+			border-radius: 50% 
+			width: 100%
+			height: 100%
+			object-fit: cover
+	&__item
+		@include flex ($ai: center)
+		margin-bottom: 90px
+		&:nth-child(odd)
+			text-align: right
+			margin-left: 20px
+		&:nth-child(even)
+			flex-direction: row-reverse
+			text-align: left
+			margin-right: 20px
+			
+	&__info
+		max-width: 325px
+		
+	&__info
+		@include flex($fd: column)
+	
+	&__text
+		line-height: 1.6
+		
+	&__title
+		font-family: "Montserrat"
+		font-size: 18px
+		font-weight: bold
+		color: $headline
+		text-transform: capitalize
+		margin-bottom: 10px
+		
+.button
+	&_round
+		border-radius: 50%
+		width: 170px
+		height: 170px
+		text-align: center
+		border: 7px solid #f1f1f1
+		p
+			max-width: 70%
+			
+// ====================
+// Team-Block styles
+// ==================== 
+.team
+	&__text
+		font-size: 16px
+		text-align: center
+		max-width: 540px
+		margin: 50px auto 0
+	&-grid
+		padding: 
+			left: 80px
+			right: 80px
+		&__item
+			@include flex($fd: column, $ai: center)
+			margin-right: 60px
+			&:last-child
+				margin-right: 0
+		&__row
+			@extend %for-row
+		&__col
+			@extend %for-col
+			@include flex($ai: center, $fd: column)
+			width: calc(100% / 3)
+			max-width: 230px
+		&__photo
+			width: 225px
+			height: 225px
+			overflow: hidden
+			border-radius: 50%
+			background-color: #000 
+			margin-bottom: 30px
+			img
+				display: block
+				width: 100%
+				height: 100%
+				object-fit: cover
+		&__info
+			text-align: center
+			h3
+				margin-bottom: 5px
+				font-family: "Myriad"
+				font-weight: bold
+				color: #262626
+			p
+				margin-bottom: 10px
+		&__links
+			@include flex($jc: center)
+.link
+	margin-right: 10px 
+	&:last-child
+		margin-right: 0
+					
+.icon
+	@include flex($jc: center, $ai: center)
+	width: 45px
+	height: 45px
+	font-size: 16px
+	color: #262626
+	border-radius: 50%
+	border: 3px solid
+	
+// =====================
+// Sponsors-Block styles
+// =====================
+
+.partners
+	&-block
+		padding: 
+			top: 60px
+			bottom: 60px
+	&-grid
+		padding: 
+			left: 80px
+			right: 80px 
+		&__row
+			@extend %for-row
+		&__col
+			@extend %for-col
+			width: 25%
+			img
+				max-width: 100%
+			&:hover img
+				opacity: 0.7 
+
+// =====================
+// Contact-Block styles
+// =====================
+
+.title
+	&_white
+		color: #FFF
+		 
+.contact
+	&-block
+		background: url(img/mapImage.jpg) no-repeat center/cover
+		padding: 
+			top: 110px
+			bottom: 115px
+		&__data
+			margin-top: 80px
+			@include flex ($jc: space-between)
+		&-btn
+			margin-top: 40px 
+			cursor: pointer 
+		&__info
+			width: 48%
+		&__item 
+			margin-bottom: 30px  
+			&:last-child
+				margin-bottom: 0
+.input
+	padding-left: 20px
+	width: 100%
+	border-radius: 3px
+	border: 1px solid #ccc
+	font-weight: bold
+	color: #bbbbbb
+	transition: 0.4s 
+	&::-webkit-input-placeholder
+		color: #bbb 
+	&:-moz-placeholder
+		color: #bbb 
+	&_small
+		height: 50px
+	&_text
+		padding-top: 20px
+		height: 210px
+		resize: none
+	&:hover
+		border-color: $yellow
+		background-color: $yellow * 3
+		color: $text 
+	&:focus
+		border-color: $yellow
+		background-color: $yellow * 3
+		color: $text
+
+.button
+	&_last
+		margin-top: 30px
+		border: none
+
+.footer
+	padding: 20px 0 30px
+	&-block
+		@include flex($ai: center)
+	&__rights
+		font-family: "Myriad"
+		font-size: 14px
+		font-weight: normal
+		color: #555
+		margin-right: 135px
+	&__links
+		@include flex
+.icon
+	&_dark
+		background-color: $headline
+		color: #FFF
+		border-color: $headline  
+
+			
+// ====================
+// MEDIA
+// ====================
+@import "_media"
+
+
+
